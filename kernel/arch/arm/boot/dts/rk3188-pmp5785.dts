@@ -312,9 +312,11 @@
 
 &i2c1 {
 	status = "okay";
+	
 	rtc@51 {
-		compatible = "nxp,pcf8563";
+		compatible = "rtc,hym8563";
 		reg = <0x51>;
+		irq_gpio = <&gpio0 GPIO_B5 IRQ_TYPE_EDGE_FALLING>;
 	};
 
 	act8846: act8846@5a {
